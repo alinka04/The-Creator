@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi & August - Уют и вдохновение</title>
+    <!-- Поэтичный шрифт с Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lavender-light: #e6e6fa; /* Нежно-лавандовый */
+            --lavender-medium: #d8bfd8; /* Средний лавандовый */
+            --lavender-dark: #9370db; /* Лиловый */
+            --text-color: #333; /* Цвет текста */
+            --background-light: #fafafa; /* Светлый фон */
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-color);
+            background-color: var(--background-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        /* Стили для шапки сайта */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--lavender-dark);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--lavender-dark);
+        }
+        
+        /* Стили для героя */
+        .hero {
+            background: linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender-medium) 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: white;
+        }
+        
+        /* Стили для разделов */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--lavender-dark);
+            font-size: 36px;
+        }
+        
+        /* Сетка товаров */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            margin-top: 0;
+            color: var(--lavender-dark);
+        }
+        
+        /* Стили для футера */
+        footer {
+            background-color: var(--lavender-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Стили для контактной формы */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+        }
+        
+        .btn {
+            background-color: var(--lavender-dark);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--lavender-medium);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Mimi & August</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Поэзия</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <section class="hero">
+        <h1>Уют, вдохновение и тепло</h1>
+        <p>Откройте для себя уникальные изделия, созданные с любовью и заботой</p>
+    </section>
+
+    <!-- Раздел с товарами -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Наши изделия</h2>
+            <div class="products-grid">
+                <!-- Товар 1 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Название товара</h3>
+                        <p>Краткое описание товара</p>
+                    </div>
+                </div>
+                
+                <!-- Товар 2 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Название товара</h3>
+                        <p>Краткое описание товара</p>
+                    </div>
+                </div>
+                
+                <!-- Товар 3 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Название товара</h3>
+                        <p>Краткое описание товара</p>
+                    </div>
+                </div>
+                
+                <!-- Товар 4 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Название товара</h3>
+                        <p>Краткое описание товара</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел с поэзией -->
+    <section class="section" style="background-color: var(--lavender-light);">
+        <div class="container">
+            <h2 class="section-title">Поэтический уголок</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="font-style: italic; font-size: 20px; line-height: 1.8;">
+                    "В лавандовых полях мечты,<br>
+                    Где нежностью полны цветы,<br>
+                    Найдёшь уют и вдохновенье,<br>
+                    И сердца трепетное биенье."
+                </p>
+                <p style="margin-top: 30px;">— Автор Mimi & August</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Mimi & August</h3>
+                <p>Создаем уют и вдохновение с любовью</p>
+            </div>
+            <div class="footer-section">
+                <h3>Навигация</h3>
+                <a href="#">Главная</a>
+                <a href="#">Каталог</a>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <a href="mailto:info@mimihammer.com">info@mimihammer.com</a>:cite[1]
+                <p>Часы работы: Пн-Пт, 10:00-17:00</p>:cite[1]
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
