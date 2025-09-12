@@ -1,139 +1,297 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mimi & August - Уют и вдохновение</title>
-    <!-- Поэтичный шрифт с Google Fonts -->
+    <title>Mimi & August | Handmade Creations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --lavender-light: #e6e6fa; /* Нежно-лавандовый */
-            --lavender-medium: #d8bfd8; /* Средний лавандовый */
-            --lavender-dark: #9370db; /* Лиловый */
-            --text-color: #333; /* Цвет текста */
-            --background-light: #fafafa; /* Светлый фон */
+            --lavender-light: #f5f0ff;
+            --lavender-medium: #e6d4ff;
+            --lavender-dark: #c9a8ff;
+            --lavender-deep: #9370db;
+            --text-color: #333;
+            --text-light: #666;
+            --background-light: #fafafa;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(147, 112, 219, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Cormorant Garamond', serif;
             color: var(--text-color);
             background-color: var(--background-light);
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
-        /* Стили для шапки сайта */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--lavender-deep);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--lavender-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--lavender-deep);
+            color: var(--lavender-deep);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--lavender-deep);
+            color: var(--white);
+        }
+        
+        /* Header Styles */
         header {
-            background-color: white;
+            background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px 0;
         }
         
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: 700;
-            color: var(--lavender-dark);
+            color: var(--lavender-deep);
+        }
+        
+        .logo span {
+            color: var(--text-color);
         }
         
         nav ul {
             display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
         }
         
         nav li {
             margin-left: 30px;
+            position: relative;
         }
         
         nav a {
-            text-decoration: none;
-            color: var(--text-color);
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 16px;
+            position: relative;
         }
         
-        nav a:hover {
-            color: var(--lavender-dark);
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--lavender-deep);
+            transition: var(--transition);
         }
         
-        /* Стили для героя */
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-icons a {
+            margin-left: 20px;
+            font-size: 18px;
+            position: relative;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--lavender-deep);
+            color: var(--white);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender-medium) 100%);
-            padding: 100px 0;
+            padding: 160px 0 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: 54px;
             margin-bottom: 20px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: var(--text-color);
         }
         
         .hero p {
             font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-            color: white;
+            margin-bottom: 30px;
+            color: var(--text-light);
         }
         
-        /* Стили для разделов */
-        .section {
-            padding: 80px 0;
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .hero-image {
+            position: absolute;
+            bottom: 0;
+            right: 5%;
+            width: 40%;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            padding: 100px 0;
         }
         
         .section-title {
-            font-family: 'Playfair Display', serif;
             text-align: center;
             margin-bottom: 50px;
-            color: var(--lavender-dark);
-            font-size: 36px;
+            position: relative;
         }
         
-        /* Сетка товаров */
+        .section-title h2 {
+            font-size: 36px;
+            display: inline-block;
+            padding-bottom: 10px;
+            position: relative;
+            color: var(--lavender-deep);
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--lavender-dark);
+        }
+        
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
         
         .product-card {
-            background: white;
+            background: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(147, 112, 219, 0.2);
         }
         
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
         
         .product-info {
@@ -141,101 +299,337 @@
         }
         
         .product-title {
-            font-family: 'Playfair Display', serif;
-            margin-top: 0;
-            color: var(--lavender-dark);
-        }
-        
-        /* Стили для футера */
-        footer {
-            background-color: var(--lavender-dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-section h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
-        
-        .footer-section a {
-            color: white;
-            text-decoration: none;
-            display: block;
+            font-size: 20px;
             margin-bottom: 10px;
-            transition: opacity 0.3s ease;
+            color: var(--text-color);
         }
         
-        .footer-section a:hover {
-            opacity: 0.8;
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--lavender-deep);
+            margin-bottom: 15px;
         }
         
-        /* Стили для контактной формы */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 16px;
         }
         
-        .form-group {
+        .product-tags {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .product-tag {
+            background-color: var(--lavender-deep);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .product-tag.sale {
+            background-color: #ff6b6b;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--lavender-light);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--lavender-deep);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--lavender-light), var(--white));
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: var(--lavender-light);
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-details h4 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .author-details p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            padding: 80px 0;
+            background-color: var(--lavender-deep);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            font-size: 36px;
             margin-bottom: 20px;
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 18px;
         }
         
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
             font-family: 'Cormorant Garamond', serif;
             font-size: 16px;
         }
         
-        .btn {
-            background-color: var(--lavender-dark);
-            color: white;
+        .newsletter-btn {
+            background-color: var(--text-color);
+            color: var(--white);
             border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
+            padding: 0 30px;
+            border-radius: 0 30px 30px 0;
             cursor: pointer;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            transition: background-color 0.3s ease;
+            transition: var(--transition);
         }
         
-        .btn:hover {
-            background-color: var(--lavender-medium);
+        .newsletter-btn:hover {
+            background-color: var(--lavender-dark);
         }
         
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .header-container {
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--lavender-medium);
+        }
+        
+        .footer-section p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--lavender-light);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--lavender-deep);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--lavender-deep);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: var(--lavender-light);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .about-content {
                 flex-direction: column;
             }
             
+            .about-image, .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                transition: var(--transition);
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
             nav ul {
-                margin-top: 20px;
+                flex-direction: column;
+                padding: 30px;
             }
             
             nav li {
-                margin-left: 15px;
-                margin-right: 15px;
+                margin: 0 0 20px 0;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 30px;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 130px 0 80px;
             }
             
             .hero h1 {
@@ -245,136 +639,270 @@
             .hero p {
                 font-size: 18px;
             }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
+    <!-- Header -->
     <header>
-        <div class="header-container">
-            <div class="logo">Mimi & August</div>
+        <div class="container header-container">
+            <a href="#" class="logo">Mimi & <span>August</span></a>
+            
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
             <nav>
                 <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Каталог</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Поэзия</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+            
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Герой -->
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>Уют, вдохновение и тепло</h1>
-        <p>Откройте для себя уникальные изделия, созданные с любовью и заботой</p>
+        <div class="container hero-content">
+            <h1>Handmade with Love & Positive Energy</h1>
+            <p>Discover our unique collection of handmade creations that bring comfort, inspiration, and warmth to your everyday life.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Shop Now</a>
+                <a href="#" class="btn btn-outline">Explore Collections</a>
+            </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Handmade products" class="hero-image">
     </section>
 
-    <!-- Раздел с товарами -->
-    <section class="section">
+    <!-- Featured Products -->
+    <section class="featured-products">
         <div class="container">
-            <h2 class="section-title">Наши изделия</h2>
+            <div class="section-title">
+                <h2>Featured Creations</h2>
+            </div>
+            
             <div class="products-grid">
-                <!-- Товар 1 -->
+                <!-- Product 1 -->
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <div class="product-tags">
+                        <span class="product-tag">New</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1603400521630-9f2de124b33b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Handmade jewelry" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-title">Название товара</h3>
-                        <p>Краткое описание товара</p>
+                        <h3 class="product-title">Lavender Dream Necklace</h3>
+                        <p class="product-price">$68.00</p>
+                        <p class="product-description">Handcrafted necklace with lavender crystals and sterling silver chain.</p>
+                        <a href="#" class="btn btn-outline">Add to Cart</a>
                     </div>
                 </div>
                 
-                <!-- Товар 2 -->
+                <!-- Product 2 -->
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <div class="product-tags">
+                        <span class="product-tag sale">Sale</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1581784368651-8916092072cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Handmade candle" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-title">Название товара</h3>
-                        <p>Краткое описание товара</p>
+                        <h3 class="product-title">Lilight Serenity Candle</h3>
+                        <p class="product-price">$42.00 <span style="text-decoration: line-through; color: var(--text-light); font-size: 14px;">$56.00</span></p>
+                        <p class="product-description">Soy wax candle with lavender and vanilla scent, hand-poured in ceramic container.</p>
+                        <a href="#" class="btn btn-outline">Add to Cart</a>
                     </div>
                 </div>
                 
-                <!-- Товар 3 -->
+                <!-- Product 3 -->
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <img src="https://images.unsplash.com/photo-1626132912753-391f0babd902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Handmade pottery" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-title">Название товара</h3>
-                        <p>Краткое описание товара</p>
+                        <h3 class="product-title">Purple Haze Ceramic Mug</h3>
+                        <p class="product-price">$38.00</p>
+                        <p class="product-description">Hand-thrown ceramic mug with subtle lavender glaze, perfect for your morning tea.</p>
+                        <a href="#" class="btn btn-outline">Add to Cart</a>
                     </div>
                 </div>
                 
-                <!-- Товар 4 -->
+                <!-- Product 4 -->
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300" alt="Товар" class="product-image">
+                    <div class="product-tags">
+                        <span class="product-tag">Bestseller</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1586023492125-27a5ce4ce3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Handmade dreamcatcher" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-title">Название товара</h3>
-                        <p>Краткое описание товара</p>
+                        <h3 class="product-title">Dream Weaver Catcher</h3>
+                        <p class="product-price">$74.00</p>
+                        <p class="product-description">Intricately designed dream catcher with lavender feathers and amethyst crystals.</p>
+                        <a href="#" class="btn btn-outline">Add to Cart</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Раздел с поэзией -->
-    <section class="section" style="background-color: var(--lavender-light);">
+    <!-- About Section -->
+    <section class="about">
         <div class="container">
-            <h2 class="section-title">Поэтический уголок</h2>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-style: italic; font-size: 20px; line-height: 1.8;">
-                    "В лавандовых полях мечты,<br>
-                    Где нежностью полны цветы,<br>
-                    Найдёшь уют и вдохновенье,<br>
-                    И сердца трепетное биенье."
-                </p>
-                <p style="margin-top: 30px;">— Автор Mimi & August</p>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27a5ce4ce3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=700&q=80" alt="About Mimi & August">
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Mimi & August was born from a passion for creating beautiful, handmade items that bring positive energy and comfort to everyday life. Each piece is crafted with intention and love, using natural materials and mindful processes.</p>
+                    <p>Our mission is to create products that not only look beautiful but also carry a sense of warmth and inspiration. We believe in the power of handmade items to transform spaces and uplift spirits.</p>
+                    <p>Every creation in our collection tells a story and is infused with the positive energy we put into our craft. We hope our pieces bring as much joy to your home as they bring to us in making them.</p>
+                    <a href="#" class="btn">Learn More About Us</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Контакты -->
-    <section class="section">
+    <!-- Testimonials -->
+    <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Свяжитесь с нами</h2>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Имя</label>
-                        <input type="text" id="name" required>
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The lavender necklace I purchased is even more beautiful in person. I receive compliments every time I wear it, and it has quickly become my favorite piece of jewelry.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="Sarah M." class="author-image">
+                        <div class="author-details">
+                            <h4>Sarah M.</h4>
+                            <p>New York, USA</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The serenity candle creates such a peaceful atmosphere in my home. The lavender scent is calming, and the craftsmanship is exceptional. Will definitely be ordering more!</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="Emily R." class="author-image">
+                        <div class="author-details">
+                            <h4>Emily R.</h4>
+                            <p>London, UK</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Сообщение</label>
-                        <textarea id="message" rows="5" required></textarea>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I purchased the dream catcher as a gift for my sister, and she absolutely loves it! The attention to detail is incredible, and it looks beautiful hanging in her bedroom.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db1604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="Jessica T." class="author-image">
+                        <div class="author-details">
+                            <h4>Jessica T.</h4>
+                            <p>Toronto, Canada</p>
+                        </div>
                     </div>
-                    <button type="submit" class="btn">Отправить</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Subscribe to our newsletter to receive updates on new collections, exclusive offers, and inspiration for living a more mindful life.</p>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Mimi & August</h3>
-                <p>Создаем уют и вдохновение с любовью</p>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Mimi & August</h3>
+                    <p>Handcrafted creations designed to bring comfort, inspiration, and positive energy to your everyday life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">Jewelry</a></li>
+                        <li><a href="#">Home Decor</a></li>
+                        <li><a href="#">Candles</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>1234 Design Street, Creative City</p>
+                    <p>Email: hello@mimiandaugust.com</p>
+                    <p>Phone: +1 (234) 567-8900</p>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Навигация</h3>
-                <a href="#">Главная</a>
-                <a href="#">Каталог</a>
-                <a href="#">О нас</a>
-                <a href="#">Контакты</a>
-            </div>
-            <div class="footer-section">
-                <h3>Контакты</h3>
-                <a href="mailto:info@mimihammer.com">info@mimihammer.com</a>:cite[1]
-                <p>Часы работы: Пн-Пт, 10:00-17:00</p>:cite[1]
+            
+            <div class="copyright">
+                <p>&copy; 2023 Mimi & August. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('nav');
+        
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Close mobile nav when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
