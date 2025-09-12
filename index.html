@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Creator | Energy, Chakras & Spiritual Growth</title>
+    <title>The Creator | Spiritual Growth, Energy & Destiny</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --lavender-light: #f5f0ff;
@@ -21,6 +21,7 @@
             --white: #ffffff;
             --shadow: 0 5px 15px rgba(147, 112, 219, 0.15);
             --transition: all 0.3s ease;
+            --section-padding: 100px 0;
         }
         
         * {
@@ -234,26 +235,54 @@
             margin-top: 30px;
         }
         
-        .hero-image {
-            position: absolute;
-            bottom: 0;
-            right: 5%;
-            width: 40%;
-            z-index: 1;
-            opacity: 0.9;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transform: perspective(800px) rotateY(-15deg);
-            transition: var(--transition);
+        /* Quick Links Section */
+        .quick-links {
+            padding: 60px 0;
+            background-color: var(--white);
         }
         
-        .hero-image:hover {
-            transform: perspective(800px) rotateY(0deg);
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .link-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(147, 112, 219, 0.2);
+        }
+        
+        .link-icon {
+            font-size: 40px;
+            color: var(--lavender-deep);
+            margin-bottom: 20px;
+        }
+        
+        .link-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--chakra-purple);
+        }
+        
+        .link-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
         }
         
         /* Featured Products */
         .featured-products {
-            padding: 100px 0;
+            padding: var(--section-padding);
+            background-color: var(--lavender-light);
         }
         
         .section-title {
@@ -358,9 +387,116 @@
             background-color: #ff6b6b;
         }
         
+        /* Calculators Section */
+        .calculators {
+            padding: var(--section-padding);
+            background: linear-gradient(to bottom, var(--white), var(--lavender-light));
+        }
+        
+        .calculator-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--lavender-medium);
+        }
+        
+        .tab-btn {
+            padding: 15px 30px;
+            background: transparent;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .tab-btn:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--lavender-deep);
+            transition: var(--transition);
+        }
+        
+        .tab-btn.active {
+            color: var(--chakra-purple);
+        }
+        
+        .tab-btn.active:after {
+            width: 100%;
+        }
+        
+        .calculator-content {
+            display: none;
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .calculator-content.active {
+            display: block;
+        }
+        
+        .calculator-form {
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--lavender-medium);
+            border-radius: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--lavender-deep);
+            box-shadow: 0 0 0 3px rgba(147, 112, 219, 0.1);
+        }
+        
+        .calculator-result {
+            background: var(--lavender-light);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .calculator-result h3 {
+            color: var(--chakra-purple);
+            margin-bottom: 15px;
+        }
+        
+        .result-content {
+            line-height: 1.8;
+        }
+        
         /* Chakra Section */
         .chakras {
-            padding: 100px 0;
+            padding: var(--section-padding);
             background: linear-gradient(to bottom, var(--lavender-light), var(--white));
         }
         
@@ -412,50 +548,72 @@
             line-height: 1.7;
         }
         
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background-color: var(--lavender-light);
+        /* Articles Section */
+        .articles {
+            padding: var(--section-padding);
+            background-color: var(--white);
         }
         
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
         }
         
-        .about-image {
-            flex: 1;
+        .article-card {
+            background: var(--white);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
         
-        .about-image:hover {
-            transform: rotate(-2deg);
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(147, 112, 219, 0.2);
         }
         
-        .about-text {
-            flex: 1;
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
         
-        .about-text h2 {
-            font-size: 38px;
-            margin-bottom: 20px;
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
             color: var(--chakra-purple);
         }
         
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 18px;
-            line-height: 1.8;
+        .article-content p {
             color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .article-meta i {
+            margin-right: 5px;
+            color: var(--lavender-deep);
+        }
+        
+        .article-meta span {
+            margin-right: 15px;
         }
         
         /* Testimonials */
         .testimonials {
-            padding: 100px 0;
+            padding: var(--section-padding);
             background: linear-gradient(to bottom, var(--white), var(--lavender-light));
         }
         
@@ -463,7 +621,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
         
         .testimonial-card {
@@ -666,6 +823,63 @@
             color: var(--lavender-light);
         }
         
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 50px auto;
+            border-radius: 15px;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.5s;
+        }
+        
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .modal-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--lavender-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h2 {
+            color: var(--chakra-purple);
+            margin: 0;
+        }
+        
+        .close-modal {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--chakra-purple);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
@@ -727,10 +941,6 @@
                 align-items: center;
             }
             
-            .hero-image {
-                display: none;
-            }
-            
             .newsletter-form {
                 flex-direction: column;
             }
@@ -743,6 +953,15 @@
             .newsletter-btn {
                 border-radius: 30px;
                 padding: 16px;
+            }
+            
+            .calculator-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                flex: 1 0 50%;
+                text-align: center;
             }
         }
         
@@ -763,12 +982,16 @@
                 font-size: 30px;
             }
             
-            .testimonials-grid {
+            .testimonials-grid, .articles-grid {
                 grid-template-columns: 1fr;
             }
             
-            .product-info {
+            .product-info, .article-content {
                 padding: 20px;
+            }
+            
+            .modal-content {
+                margin: 20px auto;
             }
         }
     </style>
@@ -785,13 +1008,13 @@
             
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Chakras</a></li>
-                    <li><a href="#">Meditation</a></li>
-                    <li><a href="#">Crystals</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="nav-link" data-section="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-section="products">Shop</a></li>
+                    <li><a href="#" class="nav-link" data-section="calculators">Calculators</a></li>
+                    <li><a href="#" class="nav-link" data-section="chakras">Chakras</a></li>
+                    <li><a href="#" class="nav-link" data-section="articles">Articles</a></li>
+                    <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
                 </ul>
             </nav>
             
@@ -807,23 +1030,66 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container hero-content">
             <h1>Awaken Your Inner Energy</h1>
-            <p>Discover the path to spiritual balance with our carefully crafted tools for chakra alignment, energy cleansing, and spiritual growth.</p>
+            <p>Discover the path to spiritual balance with our carefully crafted tools for chakra alignment, energy cleansing, and spiritual growth. Connect with the power of nature and unlock your true potential.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn">Explore Products</a>
-                <a href="#" class="btn btn-outline">Learn About Chakras</a>
+                <a href="#" class="btn" id="exploreProducts">Explore Products</a>
+                <a href="#" class="btn btn-outline" id="learnMore">Learn More</a>
             </div>
         </div>
-        <img src="https://images.unsplash.com/photo-1544376664-80b17f09d399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800&q=80" alt="Spiritual products" class="hero-image">
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="links-grid">
+                <div class="link-card" data-modal="destiny-matrix">
+                    <div class="link-icon">
+                        <i class="fas fa-star-and-crescent"></i>
+                    </div>
+                    <h3>Destiny Matrix</h3>
+                    <p>Calculate your destiny matrix based on your birth date and discover your life path</p>
+                    <a href="#" class="btn btn-outline">Calculate</a>
+                </div>
+                
+                <div class="link-card" data-modal="zodiac-sign">
+                    <div class="link-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Zodiac Sign</h3>
+                    <p>Find out your zodiac sign and what the stars have in store for you today</p>
+                    <a href="#" class="btn btn-outline">Discover</a>
+                </div>
+                
+                <div class="link-card" data-modal="chinese-zodiac">
+                    <div class="link-icon">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3>Chinese Zodiac</h3>
+                    <p>Learn about your Chinese zodiac sign based on your birth year and its meaning</p>
+                    <a href="#" class="btn btn-outline">Explore</a>
+                </div>
+                
+                <div class="link-card" data-modal="moon-calendar">
+                    <div class="link-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Moon Calendar</h3>
+                    <p>Track moon phases and learn how they affect your energy and spiritual practice</p>
+                    <a href="#" class="btn btn-outline">View Calendar</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Featured Products -->
-    <section class="featured-products">
+    <section class="featured-products" id="products">
         <div class="container">
             <div class="section-title">
                 <h2>Energy Tools & Spiritual Products</h2>
+                <p>Carefully crafted items to support your spiritual journey</p>
             </div>
             
             <div class="products-grid">
@@ -837,7 +1103,7 @@
                         <h3 class="product-title">Chakra Balancing Necklace</h3>
                         <p class="product-price">$68.00</p>
                         <p class="product-description">Handcrafted necklace with seven chakra stones to balance your energy throughout the day.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                        <a href="#" class="btn btn-outline product-details" data-product="1">View Details</a>
                     </div>
                 </div>
                 
@@ -851,7 +1117,7 @@
                         <h3 class="product-title">Lavender Meditation Candle</h3>
                         <p class="product-price">$42.00 <span style="text-decoration: line-through; color: var(--text-light); font-size: 14px;">$56.00</span></p>
                         <p class="product-description">Soy wax candle infused with lavender essential oil to enhance meditation and relaxation.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                        <a href="#" class="btn btn-outline product-details" data-product="2">View Details</a>
                     </div>
                 </div>
                 
@@ -862,7 +1128,7 @@
                         <h3 class="product-title">Seven Chakra Crystal Set</h3>
                         <p class="product-price">$89.00</p>
                         <p class="product-description">A complete set of seven healing crystals, each corresponding to one of the main chakras.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                        <a href="#" class="btn btn-outline product-details" data-product="3">View Details</a>
                     </div>
                 </div>
                 
@@ -876,68 +1142,93 @@
                         <h3 class="product-title">White Sage Cleansing Bundle</h3>
                         <p class="product-price">$24.00</p>
                         <p class="product-description">Organic white sage bundle for energy cleansing and space purification rituals.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                        <a href="#" class="btn btn-outline product-details" data-product="4">View Details</a>
                     </div>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Singing bowl" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Tibetan Singing Bowl</h3>
-                        <p class="product-price">$75.00</p>
-                        <p class="product-description">Hand-hammered Tibetan singing bowl for sound healing and meditation practices.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+    <!-- Calculators Section -->
+    <section class="calculators" id="calculators">
+        <div class="container">
+            <div class="section-title">
+                <h2>Spiritual Calculators</h2>
+                <p>Discover your spiritual profile through these interactive tools</p>
+            </div>
+            
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="destiny">Destiny Matrix</button>
+                <button class="tab-btn" data-tab="zodiac">Zodiac Sign</button>
+                <button class="tab-btn" data-tab="chinese">Chinese Zodiac</button>
+            </div>
+            
+            <div class="calculator-content active" id="destiny-calculator">
+                <h3>Calculate Your Destiny Matrix</h3>
+                <p>Enter your birth date to discover your destiny matrix and life path number</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="birthdate">Your Birth Date</label>
+                        <input type="date" id="birthdate" required>
                     </div>
+                    <button class="btn" id="calculate-destiny">Calculate</button>
                 </div>
-
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-tags">
-                        <span class="product-tag">New</span>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1611003228941-98852ba62227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Essential oils" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Chakra Essential Oil Set</h3>
-                        <p class="product-price">$58.00</p>
-                        <p class="product-description">Seven blended essential oils designed to balance and align each of your chakras.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
-                    </div>
+                
+                <div class="calculator-result" id="destiny-result">
+                    <h3>Your Destiny Matrix</h3>
+                    <div class="result-content"></div>
                 </div>
-
-                <!-- Product 7 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1590502593745-0a730d276623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Yoga mat" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Chakra Alignment Yoga Mat</h3>
-                        <p class="product-price">$95.00</p>
-                        <p class="product-description">Eco-friendly yoga mat with chakra symbols for energy work during your practice.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+            </div>
+            
+            <div class="calculator-content" id="zodiac-calculator">
+                <h3>Discover Your Zodiac Sign</h3>
+                <p>Enter your birth date to find out your zodiac sign and its characteristics</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="zodiac-birthdate">Your Birth Date</label>
+                        <input type="date" id="zodiac-birthdate" required>
                     </div>
+                    <button class="btn" id="calculate-zodiac">Discover</button>
                 </div>
-
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="product-tags">
-                        <span class="product-tag">Bestseller</span>
+                
+                <div class="calculator-result" id="zodiac-result">
+                    <h3>Your Zodiac Sign</h3>
+                    <div class="result-content"></div>
+                </div>
+            </div>
+            
+            <div class="calculator-content" id="chinese-calculator">
+                <h3>Find Your Chinese Zodiac</h3>
+                <p>Enter your birth year to discover your Chinese zodiac animal and its meaning</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="birth-year">Your Birth Year</label>
+                        <input type="number" id="birth-year" min="1900" max="2023" required>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1616627541465-28d7f5d498ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Tarot cards" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Energy Reading Tarot Deck</h3>
-                        <p class="product-price">$45.00</p>
-                        <p class="product-description">Beautifully illustrated tarot deck designed specifically for energy reading and guidance.</p>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
-                    </div>
+                    <button class="btn" id="calculate-chinese">Discover</button>
+                </div>
+                
+                <div class="calculator-result" id="chinese-result">
+                    <h3>Your Chinese Zodiac</h3>
+                    <div class="result-content"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Chakra Section -->
-    <section class="chakras">
+    <section class="chakras" id="chakras">
         <div class="container">
             <div class="section-title">
                 <h2>The Seven Chakras</h2>
+                <p>Energy centers that regulate all parts of our bodily system</p>
             </div>
             
             <div class="chakra-container">
@@ -947,7 +1238,7 @@
                     </div>
                     <div class="chakra-info">
                         <h3>Root Chakra (Muladhara)</h3>
-                        <p>Located at the base of the spine, the root chakra represents our foundation and feeling of being grounded. When balanced, you feel secure and stable.</p>
+                        <p>Located at the base of the spine, the root chakra represents our foundation and feeling of being grounded. When balanced, you feel secure and stable. Imbalances can manifest as anxiety, fear, or financial issues.</p>
                     </div>
                 </div>
                 
@@ -957,7 +1248,7 @@
                     </div>
                     <div class="chakra-info">
                         <h3>Sacral Chakra (Svadhisthana)</h3>
-                        <p>Located in the lower abdomen, this chakra connects to our creativity and sexual energy. When balanced, you feel creative and passionate.</p>
+                        <p>Located in the lower abdomen, this chakra connects to our creativity and sexual energy. When balanced, you feel creative and passionate. Blockages may result in emotional instability or creative blocks.</p>
                     </div>
                 </div>
                 
@@ -967,7 +1258,7 @@
                     </div>
                     <div class="chakra-info">
                         <h3>Solar Plexus Chakra (Manipura)</h3>
-                        <p>Located in the upper abdomen, this chakra is our source of personal power. When balanced, you feel confident and in control.</p>
+                        <p>Located in the upper abdomen, this chakra is our source of personal power. When balanced, you feel confident and in control. Imbalances can cause low self-esteem or digestive issues.</p>
                     </div>
                 </div>
                 
@@ -977,7 +1268,7 @@
                     </div>
                     <div class="chakra-info">
                         <h3>Heart Chakra (Anahata)</h3>
-                        <p>Located at the heart center, this chakra represents our ability to love and connect. When balanced, you feel compassionate and empathetic.</p>
+                        <p>Located at the heart center, this chakra represents our ability to love and connect. When balanced, you feel compassionate and empathetic. Blockages may manifest as loneliness or inability to forgive.</p>
                     </div>
                 </div>
                 
@@ -987,7 +1278,7 @@
                     </div>
                     <div class="chakra-info">
                         <h3>Throat Chakra (Vishuddha)</h3>
-                        <p>Located at the throat, this chakra represents our ability to communicate. When balanced, you express yourself clearly and truthfully.</p>
+                        <p>Located at the throat, this chakra represents our ability to communicate. When balanced, you express yourself clearly and truthfully. Imbalances can cause communication issues or fear of speaking up.</p>
                     </div>
                 </div>
                 
@@ -997,7 +1288,7 @@
                     </div>
                     <div class="chakra-info">
                         <h3>Third Eye Chakra (Ajna)</h3>
-                        <p>Located between the eyes, this chakra is our center of intuition. When balanced, you have good insight and trust your inner wisdom.</p>
+                        <p>Located between the eyes, this chakra is our center of intuition. When balanced, you have good insight and trust your inner wisdom. Blockages may result in lack of clarity or connection to intuition.</p>
                     </div>
                 </div>
                 
@@ -1007,27 +1298,64 @@
                     </div>
                     <div class="chakra-info">
                         <h3>Crown Chakra (Sahasrara)</h3>
-                        <p>Located at the crown of the head, this chakra connects us to divine energy. When balanced, you feel spiritually connected and enlightened.</p>
+                        <p>Located at the crown of the head, this chakra connects us to divine energy. When balanced, you feel spiritually connected and enlightened. Imbalances can cause feelings of isolation or spiritual skepticism.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- Articles Section -->
+    <section class="articles" id="articles">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1544376664-80b17f09d399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=700&q=80" alt="About The Creator">
+            <div class="section-title">
+                <h2>Spiritual Articles</h2>
+                <p>Learn about energy cleansing, moon cycles, and spiritual practices</p>
+            </div>
+            
+            <div class="articles-grid">
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1544376664-80b17f09d399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Energy cleansing" class="article-image">
+                    <div class="article-content">
+                        <h3>7 Methods for Cleansing Your Energy</h3>
+                        <p>Learn powerful techniques to clear negative energy and restore your spiritual balance using sage, crystals, and other natural methods.</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 10 min read</span>
+                            <span><i class="far fa-calendar"></i> April 12, 2023</span>
+                        </div>
+                        <a href="#" class="btn btn-outline read-more" data-article="1">Read More</a>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h2>Our Spiritual Journey</h2>
-                    <p>The Creator was born from a deep desire to help others on their spiritual path. We believe that everyone has the power to transform their energy and manifest their highest potential.</p>
-                    <p>Our products are carefully crafted with intention and infused with positive energy to support your journey of self-discovery, healing, and spiritual growth.</p>
-                    <p>Each item in our collection is created with mindfulness and reverence for the ancient traditions that inspire our work. We source materials ethically and work with artisans who share our vision for a more conscious world.</p>
-                    <a href="#" class="btn">Learn More About Our Mission</a>
+                
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Moon phases" class="article-image">
+                    <div class="article-content">
+                        <h3>How Moon Phases Affect Your Energy</h3>
+                        <p>Discover the powerful connection between lunar cycles and your spiritual energy, and how to align your practices with the moon's phases.</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 8 min read</span>
+                            <span><i class="far fa-calendar"></i> March 28, 2023</span>
+                        </div>
+                        <a href="#" class="btn btn-outline read-more" data-article="2">Read More</a>
+                    </div>
                 </div>
+                
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Nature connection" class="article-image">
+                    <div class="article-content">
+                        <h3>Connecting with Nature's Energy</h3>
+                        <p>Explore ways to deepen your connection with nature and harness the Earth's energy for healing, grounding, and spiritual growth.</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 12 min read</span>
+                            <span><i class="far fa-calendar"></i> March 15, 2023</span>
+                        </div>
+                        <a href="#" class="btn btn-outline read-more" data-article="3">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="btn">View All Articles</a>
             </div>
         </div>
     </section>
@@ -1037,6 +1365,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Stories of Transformation</h2>
+                <p>What our community says about their spiritual journey</p>
             </div>
             
             <div class="testimonials-grid">
@@ -1066,7 +1395,7 @@
                 
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card">
-                    <p class="testimonial-text">The chakra necklace is not only beautiful but powerful. I wear it daily and can feel its balancing energy throughout the day. I've received so many compliments on it too!</p>
+                    <p class="testimonial-text">The articles on moon phases have helped me align my energy work with natural cycles. I've noticed significant improvements in my intuition and spiritual connection since applying these practices.</p>
                     <div class="testimonial-author">
                         <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db1604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="Jessica T." class="author-image">
                         <div class="author-details">
@@ -1138,10 +1467,110 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 The Creator. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> and positive energy.</p>
+                <p>&copy; 2025 The Creator. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> and positive energy.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="destiny-matrix-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Destiny Matrix Calculator</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>The Destiny Matrix is a powerful numerological system that reveals your life path, challenges, and opportunities based on your birth date.</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="modal-birthdate">Your Birth Date</label>
+                        <input type="date" id="modal-birthdate" required>
+                    </div>
+                    <button class="btn" id="modal-calculate-destiny">Calculate My Matrix</button>
+                </div>
+                
+                <div class="calculator-result" id="modal-destiny-result">
+                    <h3>Your Destiny Matrix</h3>
+                    <div class="result-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="zodiac-sign-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Zodiac Sign Calculator</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Discover your zodiac sign based on your birth date and learn about its characteristics, strengths, and challenges.</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="modal-zodiac-birthdate">Your Birth Date</label>
+                        <input type="date" id="modal-zodiac-birthdate" required>
+                    </div>
+                    <button class="btn" id="modal-calculate-zodiac">Discover My Sign</button>
+                </div>
+                
+                <div class="calculator-result" id="modal-zodiac-result">
+                    <h3>Your Zodiac Sign</h3>
+                    <div class="result-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="chinese-zodiac-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Chinese Zodiac Calculator</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>The Chinese zodiac is a classification scheme that assigns an animal and its reputed attributes to each year in a repeating 12-year cycle.</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="modal-birth-year">Your Birth Year</label>
+                        <input type="number" id="modal-birth-year" min="1900" max="2023" required>
+                    </div>
+                    <button class="btn" id="modal-calculate-chinese">Discover My Zodiac</button>
+                </div>
+                
+                <div class="calculator-result" id="modal-chinese-result">
+                    <h3>Your Chinese Zodiac</h3>
+                    <div class="result-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Product Details</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="product-detail-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="article-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Article</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="article-content"></div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Mobile Navigation Toggle
@@ -1160,6 +1589,549 @@
             });
         });
 
+        // Tab functionality for calculators
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const calculatorContents = document.querySelectorAll('.calculator-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                calculatorContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(`${tabId}-calculator`).classList.add('active');
+            });
+        });
+
+        // Modal functionality
+        const modals = document.querySelectorAll('.modal');
+        const openModal = (modalId) => {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        };
+        
+        const closeModals = () => {
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        };
+        
+        // Open modal when quick link cards are clicked
+        document.querySelectorAll('.link-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.tagName !== 'A') {
+                    const modalId = card.getAttribute('data-modal') + '-modal';
+                    openModal(modalId);
+                }
+            });
+        });
+        
+        // Close modal when X is clicked
+        document.querySelectorAll('.close-modal').forEach(closeBtn => {
+            closeBtn.addEventListener('click', closeModals);
+        });
+        
+        // Close modal when clicking outside content
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModals();
+                }
+            });
+        });
+        
+        // Product details modal
+        document.querySelectorAll('.product-details').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productId = btn.getAttribute('data-product');
+                const productModal = document.getElementById('product-modal');
+                const productContent = document.getElementById('product-detail-content');
+                
+                // Sample product details (in a real site, this would come from a database)
+                const products = {
+                    1: {
+                        title: "Chakra Balancing Necklace",
+                        price: "$68.00",
+                        image: "https://images.unsplash.com/photo-1603400521630-9f2de124b33b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+                        description: "This beautifully handcrafted necklace features seven genuine chakra stones carefully selected for their energy properties. Each stone corresponds to one of the main chakras, helping to balance and align your energy throughout the day.",
+                        details: "<p>Materials: Natural stones (amethyst, carnelian, yellow jade, green aventurine, sodalite, clear quartz), sterling silver chain</p><p>Length: Adjustable 18-20 inches</p><p>Benefits: Energy balancing, spiritual protection, enhances meditation</p><p>Care: Cleanse under moonlight monthly</p>"
+                    },
+                    2: {
+                        title: "Lavender Meditation Candle",
+                        price: "$42.00",
+                        image: "https://images.unsplash.com/photo-1581784368651-8916092072cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+                        description: "Our meditation candles are hand-poured with natural soy wax and infused with pure lavender essential oil. The calming scent helps to quiet the mind and create a peaceful atmosphere for meditation and relaxation.",
+                        details: "<p>Burn Time: Approximately 40 hours</p><p>Ingredients: Soy wax, lavender essential oil, cotton wick</p><p>Size: 3.5 x 3.5 inches</p><p>Benefits: Promotes relaxation, enhances meditation, improves sleep quality</p>"
+                    },
+                    3: {
+                        title: "Seven Chakra Crystal Set",
+                        price: "$89.00",
+                        image: "https://images.unsplash.com/photo-1580086319616-6ccac6e1c3dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+                        description: "This complete set includes seven carefully selected crystals, each corresponding to one of the main chakras. The set comes with a detailed guide on how to use each crystal for chakra healing and energy work.",
+                        details: "<p>Includes: Amethyst (Crown), Sodalite (Third Eye), Blue Lace Agate (Throat), Green Aventurine (Heart), Yellow Jade (Solar Plexus), Carnelian (Sacral), Red Jasper (Root)</p><p>Size: Each crystal approximately 1-1.5 inches</p><p>Benefits: Chakra balancing, energy healing, meditation aid</p><p>Care: Cleanse with sage or moonlight</p>"
+                    },
+                    4: {
+                        title: "White Sage Cleansing Bundle",
+                        price: "$24.00",
+                        image: "https://images.unsplash.com/photo-1586023492125-27a5ce4ce3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+                        description: "Our white sage bundles are ethically harvested and hand-tied with cotton string. Used for centuries in smudging ceremonies, white sage clears negative energy and purifies spaces, objects, and auras.",
+                        details: "<p>Contents: White sage bundle (approximately 4 inches)</p><p>Origin: Sustainably harvested from California</p><p>Usage: Light one end and gently blow out flame, allowing smoke to cleanse the space</p><p>Benefits: Clears negative energy, promotes positivity, enhances spiritual practice</p>"
+                    }
+                };
+                
+                const product = products[productId];
+                productContent.innerHTML = `
+                    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 30px;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <img src="${product.image}" alt="${product.title}" style="width: 100%; border-radius: 10px;">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3>${product.title}</h3>
+                            <p class="product-price" style="font-size: 24px; color: var(--lavender-deep); margin: 15px 0;">${product.price}</p>
+                            <p>${product.description}</p>
+                            <div style="margin: 20px 0;">
+                                <a href="#" class="btn" style="margin-right: 15px;">Add to Cart</a>
+                                <a href="#" class="btn btn-outline">Favorite</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Product Details</h4>
+                        ${product.details}
+                    </div>
+                `;
+                
+                productModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Article modal
+        document.querySelectorAll('.read-more').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const articleId = btn.getAttribute('data-article');
+                const articleModal = document.getElementById('article-modal');
+                const articleContent = document.getElementById('article-content');
+                
+                // Sample article content
+                const articles = {
+                    1: {
+                        title: "7 Methods for Cleansing Your Energy",
+                        image: "https://images.unsplash.com/photo-1544376664-80b17f09d399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+                        content: `
+                            <h3>Why Cleanse Your Energy?</h3>
+                            <p>We accumulate energy from our environments, interactions, and experiences throughout the day. This energy can sometimes be heavy, negative, or simply not aligned with our vibration. Regular energy cleansing helps to:</p>
+                            <ul>
+                                <li>Release stagnant or negative energy</li>
+                                <li>Restore your natural energy flow</li>
+                                <li>Improve mental clarity and emotional balance</li>
+                                <li>Enhance your intuition and spiritual connection</li>
+                                <li>Create a peaceful and harmonious environment</li>
+                            </ul>
+                            
+                            <h3>7 Effective Energy Cleansing Methods</h3>
+                            
+                            <h4>1. Smudging with Sage</h4>
+                            <p>Burning sage (smudging) is one of the oldest and most effective ways to clear negative energy. The smoke from sacred herbs attaches itself to negative energy and, as the smoke clears, it takes the negative energy with it, releasing it into another realm where it can be transformed into positive energy.</p>
+                            <p>How to: Light the end of a sage bundle and gently blow out the flame, allowing the smoke to billow. Walk around your space, focusing on corners, doorways, and windows. You can also smudge your body by directing the smoke around your energy field.</p>
+                            
+                            <h4>2. Using Sound Healing</h4>
+                            <p>Sound vibrations can break up stagnant energy and restore harmony. Instruments like singing bowls, bells, chimes, or even your own voice can be effective for clearing energy.</p>
+                            <p>How to: Ring a bell or play a singing bowl in each corner of the room. The sound waves will disrupt stagnant energy and create space for fresh, positive energy to flow.</p>
+                            
+                            <h4>3. Crystal Cleansing</h4>
+                            <p>Certain crystals like black tourmaline, selenite, and clear quartz are excellent for absorbing and transmuting negative energy.</p>
+                            <p>How to: Place protective crystals in the corners of your room or carry them with you. Remember to cleanse your crystals regularly under running water, moonlight, or with sage smoke.</p>
+                            
+                            <h4>4. Salt Baths</h4>
+                            <p>Salt is a powerful cleansing agent that can draw out negative energy from your energy field. Taking a salt bath can help to purify your aura and release attachments.</p>
+                            <p>How to: Add a cup of sea salt or Epsom salt to your bathwater. You can also add a few drops of essential oils like lavender or rosemary for added cleansing properties. Soak for at least 20 minutes.</p>
+                            
+                            <h4>5. Visualization Techniques</h4>
+                            <p>Your mind is a powerful tool for energy work. Visualization can be just as effective as physical methods for cleansing your energy.</p>
+                            <p>How to: Sit comfortably and close your eyes. Visualize a bright white or golden light surrounding your body. Imagine this light expanding and pushing out any dark or heavy energy. See the negative energy dissolving in the light.</p>
+                            
+                            <h4>6. Using Essential Oils</h4>
+                            <p>Certain essential oils have cleansing and purifying properties. Frankincense, sandalwood, lavender, and rosemary are particularly effective for energy clearing.</p>
+                            <p>How to: Diffuse cleansing oils in your space, add them to your bath, or dilute with a carrier oil and apply to your wrists, temples, and feet.</p>
+                            
+                            <h4>7. Connecting with Nature</h4>
+                            <p>Nature has an incredible ability to cleanse and rejuvenate our energy. Spending time outdoors, especially near water or in forests, can help to clear stagnant energy and ground yourself.</p>
+                            <p>How to: Walk barefoot on grass or sand, spend time near moving water, or simply sit under a tree and visualize any negative energy being absorbed by the earth.</p>
+                            
+                            <h3>Creating a Regular Practice</h3>
+                            <p>Energy cleansing is most effective when done regularly. Consider making it part of your weekly routine, or anytime you feel heavy, drained, or after intense interactions or experiences. Trust your intuition to guide you on when and how to cleanse your energy.</p>
+                        `
+                    },
+                    2: {
+                        title: "How Moon Phases Affect Your Energy",
+                        image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+                        content: `
+                            <h3>The Moon's Energetic Influence</h3>
+                            <p>For centuries, cultures around the world have recognized the moon's powerful influence on Earth's energy and human consciousness. The moon governs the tides, affects plant growth, and influences our emotions, energy levels, and spiritual awareness.</p>
+                            <p>By understanding and working with moon phases, you can align your activities with natural cycles, harness lunar energy for manifestation, and navigate emotional waves with greater ease.</p>
+                            
+                            <h3>Understanding the Moon Phases</h3>
+                            
+                            <h4>New Moon - New Beginnings</h4>
+                            <p>The new moon occurs when the moon is between the Earth and the sun, making it invisible in the night sky. This phase represents new beginnings, setting intentions, and planting seeds for the future.</p>
+                            <p>Energy Characteristics: Introspective, contemplative, receptive</p>
+                            <p>Ideal Activities: Meditation, journaling, setting intentions, planning new projects</p>
+                            
+                            <h4>Waxing Moon - Growth and Expansion</h4>
+                            <p>As the moon grows from new to full, its energy supports growth, action, and manifestation. This is the time to take concrete steps toward your goals.</p>
+                            <p>Energy Characteristics: Building, expanding, active</p>
+                            <p>Ideal Activities: Taking action on goals, building habits, learning new skills</p>
+                            
+                            <h4>Full Moon - Culmination and Release</h4>
+                            <p>The full moon occurs when the Earth is between the sun and moon, fully illuminating the moon's face. This phase brings energy to a peak, illuminating what needs to be released.</p>
+                            <p>Energy Characteristics: Emotional, revealing, intense</p>
+                            <p>Ideal Activities: Releasing what no longer serves you, practicing gratitude, charging crystals</p>
+                            
+                            <h4>Waning Moon - Letting Go</h4>
+                            <p>As the moon decreases from full to new, its energy supports release, cleansing, and completion. This is the time to tie up loose ends and let go of what's no longer needed.</p>
+                            <p>Energy Characteristics: Releasing, cleansing, completing</p>
+                            <p>Ideal Activities: Cleaning and organizing, completing projects, forgiveness work</p>
+                            
+                            <h3>Working with Moon Energy</h3>
+                            <p>Aligning your activities with moon phases can help you work with natural energies rather than against them. Here are some ways to incorporate lunar awareness into your spiritual practice:</p>
+                            
+                            <h4>1. Moon Journaling</h4>
+                            <p>Keep a journal where you record your observations, emotions, and energy levels throughout the lunar cycle. Over time, you'll notice patterns and learn how each phase specifically affects you.</p>
+                            
+                            <h4>2. Moon Rituals</h4>
+                            <p>Create simple rituals for each moon phase. New moon rituals might involve setting intentions and lighting a candle. Full moon rituals might involve writing down what you want to release and burning the paper safely.</p>
+                            
+                            <h4>3. Moon Meditation</h4>
+                            <p>Meditate under the moonlight (or facing a window where moonlight enters). Visualize the moon's energy cleansing and recharging your own energy field.</p>
+                            
+                            <h4>4. Charging Crystals and Tools</h4>
+                            <p>Place your crystals, tarot cards, or other spiritual tools in moonlight to cleanse and charge them. Be cautious with some crystals in direct sunlight, but moonlight is safe for all crystals.</p>
+                            
+                            <h3>Moon Signs and Their Influence</h3>
+                            <p>In addition to phases, the moon moves through different zodiac signs every 2-3 days, coloring its energy with the qualities of each sign:</p>
+                            <ul>
+                                <li><strong>Fire signs (Aries, Leo, Sagittarius):</strong> Energizing, motivating, good for taking action</li>
+                                <li><strong>Earth signs (Taurus, Virgo, Capricorn):</strong> Grounding, practical, good for financial matters</li>
+                                <li><strong>Air signs (Gemini, Libra, Aquarius):</strong> Social, communicative, good for learning and connecting</li>
+                                <li><strong>Water signs (Cancer, Scorpio, Pisces):</strong> Emotional, intuitive, good for healing and creative work</li>
+                            </ul>
+                            
+                            <h3>Creating a Lunar Practice</h3>
+                            <p>You don't need to do elaborate rituals to benefit from lunar awareness. Simply noticing the moon's phase each night and checking in with your own energy can create a powerful connection. Over time, you'll naturally begin to align your activities with the moon's rhythm, creating more flow and harmony in your life.</p>
+                        `
+                    },
+                    3: {
+                        title: "Connecting with Nature's Energy",
+                        image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+                        content: `
+                            <h3>The Healing Power of Nature</h3>
+                            <p>For thousands of years, humans have recognized nature's ability to heal, restore, and inspire. In our modern world, where many of us spend most of our time indoors, consciously connecting with nature has become even more important for our physical, mental, and spiritual well-being.</p>
+                            <p>Nature is not just a resource to be used—it's a living, breathing system that we are part of. When we remember our connection to the natural world, we tap into a source of wisdom, energy, and healing that is always available to us.</p>
+                            
+                            <h3>Benefits of Connecting with Nature</h3>
+                            <ul>
+                                <li><strong>Reduced stress:</strong> Time in nature lowers cortisol levels and reduces feelings of stress and anxiety</li>
+                                <li><strong>Improved mood:</strong> Exposure to natural environments boosts serotonin levels and improves overall mood</li>
+                                <li><strong>Enhanced creativity:</strong> Nature inspires new ideas and helps overcome creative blocks</li>
+                                <li><strong>Spiritual connection:</strong> Nature helps us feel connected to something larger than ourselves</li>
+                                <li><strong>Grounding energy:</strong> Direct contact with the earth helps to balance our energy and reduce inflammation</li>
+                                <li><strong>Cleansing:</strong> Natural environments, especially near moving water or in forests, help to clear stagnant energy</li>
+                            </ul>
+                            
+                            <h3>Practical Ways to Connect with Nature's Energy</h3>
+                            
+                            <h4>1. Grounding (Earthing)</h4>
+                            <p>Grounding involves making direct physical contact with the earth's surface. This practice allows you to absorb the earth's electrons, which can reduce inflammation, improve sleep, and balance your energy.</p>
+                            <p>How to: Walk barefoot on grass, sand, or soil for at least 20 minutes daily. If weather or location doesn't permit, you can use grounding mats or sheets indoors.</p>
+                            
+                            <h4>2. Forest Bathing (Shinrin-yoku)</h4>
+                            <p>This Japanese practice involves immersing yourself in a forest environment. It's not about exercise or hiking, but about being present with the forest through all your senses.</p>
+                            <p>How to: Find a wooded area and walk slowly without destination. Engage all your senses—notice the smells, sounds, textures, and sights. Stay for at least two hours for maximum benefit.</p>
+                            
+                            <h4>3. Working with Plant Spirits</h4>
+                            <p>Many traditions recognize that plants have consciousness and spirit. Developing relationships with plants can be a powerful way to connect with nature's wisdom.</p>
+                            <p>How to: Spend time with specific trees or plants regularly. Sit with them, meditate, and observe them through the seasons. You might even ask permission before harvesting any parts of the plant.</p>
+                            
+                            <h4>4. Nature Meditation</h4>
+                            <p>Meditating outdoors amplifies the benefits of both meditation and nature connection. The natural environment provides a rich tapestry of sensations to anchor your awareness.</p>
+                            <p>How to: Find a comfortable spot in nature. Instead of closing your eyes, keep them open and soft. Notice the movement of leaves, the play of light, the sounds around you. Allow your awareness to expand to include the entire environment.</p>
+                            
+                            <h4>5. Creating Nature Altars</h4>
+                            <p>Creating small altars with natural objects can help you bring nature's energy into your home and maintain a connection even when you're indoors.</p>
+                            <p>How to: Designate a special space in your home where you arrange found objects like stones, feathers, leaves, or shells. Change these items with the seasons to stay connected to nature's cycles.</p>
+                            
+                            <h4>6. Sun Gazing</h4>
+                            <p>This ancient practice involves looking at the sun during safe hours (within the first hour after sunrise or before sunset) to absorb its energy and light.</p>
+                            <p>How to: During safe sun hours, look at the sun for just a few seconds initially, gradually building up to longer periods. Never look at the sun when it's bright enough to cause discomfort.</p>
+                            
+                            <h4>7. Moon Bathing</h4>
+                            <p>Just as we can absorb the sun's energy, we can also absorb the moon's energy, which is particularly beneficial for intuition and emotional balance.</p>
+                            <p>How to: On clear nights, especially during the full moon, spend time sitting or lying in moonlight. You can meditate, journal, or simply be present with the moon's energy.</p>
+                            
+                            <h3>Deepening Your Nature Connection</h3>
+                            <p>As you develop your relationship with nature, you might notice specific elements calling to you more than others. Some people feel particularly connected to water, others to mountains, forests, or deserts. Honor these callings—they often indicate where you can receive the most healing and inspiration.</p>
+                            <p>Remember that connecting with nature isn't just about what we receive, but also about what we give back. Practice reciprocity by caring for natural spaces, picking up litter, planting trees, or supporting environmental causes. This creates a balanced exchange of energy that benefits both you and the natural world.</p>
+                            
+                            <h3>Bringing Nature Indoors</h3>
+                            <p>When you can't get outside, you can still connect with nature's energy by:</p>
+                            <ul>
+                                <li>Keeping plants in your home</li>
+                                <li>Using natural materials in your decor</li>
+                                <li>Opening windows to allow fresh air and sounds to enter</li>
+                                <li>Displaying natural objects you've collected</li>
+                                <li>Using nature sounds in your meditation practice</li>
+                                <li>Working with essential oils from plants</li>
+                            </ul>
+                            
+                            <p>However you choose to connect, remember that nature is always available to you. Even in the most urban environments, you can find patches of sky, potted plants, or passing birds to remind you of your connection to the wider web of life.</p>
+                        `
+                    }
+                };
+                
+                const article = articles[articleId];
+                articleContent.innerHTML = `
+                    <img src="${article.image}" alt="${article.title}" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+                    <h2>${article.title}</h2>
+                    ${article.content}
+                `;
+                
+                articleModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Calculator functionality
+        // Destiny Matrix Calculator
+        document.getElementById('calculate-destiny').addEventListener('click', calculateDestiny);
+        document.getElementById('modal-calculate-destiny').addEventListener('click', calculateDestiny);
+        
+        function calculateDestiny() {
+            const birthdate = document.getElementById('birthdate').value || document.getElementById('modal-birthdate').value;
+            if (!birthdate) {
+                alert('Please enter your birth date');
+                return;
+            }
+            
+            // Simple destiny matrix calculation based on birth date
+            const date = new Date(birthdate);
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            
+            // Calculate life path number (simplified)
+            const lifePath = reduceToSingleDigit(day) + reduceToSingleDigit(month) + reduceToSingleDigit(year);
+            const lifePathNumber = reduceToSingleDigit(lifePath);
+            
+            // Calculate expression number (simplified)
+            const expression = reduceToSingleDigit(day + month + year);
+            
+            // Calculate soul urge number (simplified)
+            const soulUrge = reduceToSingleDigit(day + month);
+            
+            const resultText = `
+                <p><strong>Birth Date:</strong> ${birthdate}</p>
+                <p><strong>Life Path Number:</strong> ${lifePathNumber} - ${getLifePathMeaning(lifePathNumber)}</p>
+                <p><strong>Expression Number:</strong> ${expression} - ${getExpressionMeaning(expression)}</p>
+                <p><strong>Soul Urge Number:</strong> ${soulUrge} - ${getSoulUrgeMeaning(soulUrge)}</p>
+                <p>Your destiny matrix reveals important aspects of your life purpose, challenges, and opportunities. This is a simplified calculation - a full destiny matrix analysis would provide more detailed insights.</p>
+            `;
+            
+            document.getElementById('destiny-result').style.display = 'block';
+            document.getElementById('destiny-result').querySelector('.result-content').innerHTML = resultText;
+            
+            document.getElementById('modal-destiny-result').style.display = 'block';
+            document.getElementById('modal-destiny-result').querySelector('.result-content').innerHTML = resultText;
+        }
+        
+        // Zodiac Sign Calculator
+        document.getElementById('calculate-zodiac').addEventListener('click', calculateZodiac);
+        document.getElementById('modal-calculate-zodiac').addEventListener('click', calculateZodiac);
+        
+        function calculateZodiac() {
+            const birthdate = document.getElementById('zodiac-birthdate').value || document.getElementById('modal-zodiac-birthdate').value;
+            if (!birthdate) {
+                alert('Please enter your birth date');
+                return;
+            }
+            
+            const date = new Date(birthdate);
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            
+            // Determine zodiac sign based on birth date
+            let zodiacSign = '';
+            if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) zodiacSign = 'Aquarius';
+            else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) zodiacSign = 'Pisces';
+            else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) zodiacSign = 'Aries';
+            else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) zodiacSign = 'Taurus';
+            else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) zodiacSign = 'Gemini';
+            else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) zodiacSign = 'Cancer';
+            else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) zodiacSign = 'Leo';
+            else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) zodiacSign = 'Virgo';
+            else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) zodiacSign = 'Libra';
+            else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) zodiacSign = 'Scorpio';
+            else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) zodiacSign = 'Sagittarius';
+            else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) zodiacSign = 'Capricorn';
+            
+            const resultText = `
+                <p><strong>Birth Date:</strong> ${birthdate}</p>
+                <p><strong>Your Zodiac Sign:</strong> ${zodiacSign}</p>
+                <p>${getZodiacMeaning(zodiacSign)}</p>
+                <p>Your zodiac sign reveals fundamental aspects of your personality and approach to life. Remember that your complete astrological profile includes many other factors like your rising sign and moon sign.</p>
+            `;
+            
+            document.getElementById('zodiac-result').style.display = 'block';
+            document.getElementById('zodiac-result').querySelector('.result-content').innerHTML = resultText;
+            
+            document.getElementById('modal-zodiac-result').style.display = 'block';
+            document.getElementById('modal-zodiac-result').querySelector('.result-content').innerHTML = resultText;
+        }
+        
+        // Chinese Zodiac Calculator
+        document.getElementById('calculate-chinese').addEventListener('click', calculateChineseZodiac);
+        document.getElementById('modal-calculate-chinese').addEventListener('click', calculateChineseZodiac);
+        
+        function calculateChineseZodiac() {
+            const birthYear = document.getElementById('birth-year').value || document.getElementById('modal-birth-year').value;
+            if (!birthYear) {
+                alert('Please enter your birth year');
+                return;
+            }
+            
+            // Chinese zodiac animals in order
+            const animals = ['Monkey', 'Rooster', 'Dog', 'Pig', 'Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat'];
+            
+            // Calculate based on Chinese zodiac cycle (12 years)
+            const animalIndex = birthYear % 12;
+            const zodiacAnimal = animals[animalIndex];
+            
+            const resultText = `
+                <p><strong>Birth Year:</strong> ${birthYear}</p>
+                <p><strong>Your Chinese Zodiac:</strong> ${zodiacAnimal}</p>
+                <p>${getChineseZodiacMeaning(zodiacAnimal)}</p>
+                <p>In Chinese astrology, your zodiac animal reveals aspects of your personality and destiny. The complete analysis would also consider your birth month, day, and hour for a more detailed profile.</p>
+            `;
+            
+            document.getElementById('chinese-result').style.display = 'block';
+            document.getElementById('chinese-result').querySelector('.result-content').innerHTML = resultText;
+            
+            document.getElementById('modal-chinese-result').style.display = 'block';
+            document.getElementById('modal-chinese-result').querySelector('.result-content').innerHTML = resultText;
+        }
+        
+        // Helper functions for calculations
+        function reduceToSingleDigit(num) {
+            while (num > 9) {
+                num = num.toString().split('').reduce((a, b) => parseInt(a) + parseInt(b), 0);
+            }
+            return num;
+        }
+        
+        function getLifePathMeaning(number) {
+            const meanings = {
+                1: "The Leader - independent, ambitious, and innovative",
+                2: "The Peacemaker - cooperative, intuitive, and supportive",
+                3: "The Creative - expressive, optimistic, and joyful",
+                4: "The Builder - practical, disciplined, and reliable",
+                5: "The Freedom Seeker - adventurous, adaptable, and curious",
+                6: "The Nurturer - responsible, protective, and compassionate",
+                7: "The Seeker - analytical, intuitive, and spiritual",
+                8: "The Powerhouse - ambitious, authoritative, and successful",
+                9: "The Humanitarian - compassionate, generous, and idealistic"
+            };
+            return meanings[number] || "Unknown meaning";
+        }
+        
+        function getExpressionMeaning(number) {
+            const meanings = {
+                1: "Self-expression through leadership and innovation",
+                2: "Self-expression through cooperation and harmony",
+                3: "Self-expression through creativity and joy",
+                4: "Self-expression through practicality and organization",
+                5: "Self-expression through freedom and variety",
+                6: "Self-expression through nurturing and responsibility",
+                7: "Self-expression through analysis and spirituality",
+                8: "Self-expression through achievement and authority",
+                9: "Self-expression through compassion and idealism"
+            };
+            return meanings[number] || "Unknown meaning";
+        }
+        
+        function getSoulUrgeMeaning(number) {
+            const meanings = {
+                1: "Desire for independence and achievement",
+                2: "Desire for partnership and harmony",
+                3: "Desire for creative expression and joy",
+                4: "Desire for stability and security",
+                5: "Desire for freedom and experience",
+                6: "Desire for nurturing and responsibility",
+                7: "Desire for knowledge and spiritual understanding",
+                8: "Desire for abundance and recognition",
+                9: "Desire to serve humanity and make a difference"
+            };
+            return meanings[number] || "Unknown meaning";
+        }
+        
+        function getZodiacMeaning(sign) {
+            const meanings = {
+                'Aries': "Aries is a fire sign known for courage, determination, and confidence. You're a natural leader with enthusiasm and energy to initiate new projects.",
+                'Taurus': "Taurus is an earth sign known for reliability, practicality, and sensuality. You value security and comfort and have a strong connection to the physical world.",
+                'Gemini': "Gemini is an air sign known for adaptability, curiosity, and communication. You're quick-witted and intellectual, with a love for learning and sharing ideas.",
+                'Cancer': "Cancer is a water sign known for emotional sensitivity, nurturing, and intuition. You're deeply connected to home and family and have strong protective instincts.",
+                'Leo': "Leo is a fire sign known for creativity, passion, and generosity. You have a natural flair for drama and self-expression and enjoy being in the spotlight.",
+                'Virgo': "Virgo is an earth sign known for analytical thinking, practicality, and attention to detail. You have a strong desire to be helpful and service-oriented.",
+                'Libra': "Libra is an air sign known for diplomacy, harmony, and partnership. You have a natural sense of justice and beauty and seek balance in all areas of life.",
+                'Scorpio': "Scorpio is a water sign known for intensity, passion, and transformation. You have deep emotional insight and a powerful ability to regenerate and reinvent yourself.",
+                'Sagittarius': "Sagittarius is a fire sign known for optimism, adventure, and philosophical thinking. You're a truth-seeker with a love for exploration and expansion.",
+                'Capricorn': "Capricorn is an earth sign known for discipline, responsibility, and ambition. You have a strong sense of structure and a practical approach to achieving your goals.",
+                'Aquarius': "Aquarius is an air sign known for innovation, independence, and humanitarianism. You're forward-thinking and value freedom and originality.",
+                'Pisces': "Pisces is a water sign known for compassion, imagination, and spirituality. You're highly intuitive and empathetic with a deep connection to the unconscious."
+            };
+            return meanings[sign] || "Unknown meaning";
+        }
+        
+        function getChineseZodiacMeaning(animal) {
+            const meanings = {
+                'Rat': "Rat people are quick-witted, resourceful, and adaptable. You're charming and practical with sharp observation skills.",
+                'Ox': "Ox people are diligent, dependable, and determined. You're a natural leader with strong values and methodical approach to life.",
+                'Tiger': "Tiger people are brave, competitive, and confident. You're charismatic with a thirst for adventure and challenge.",
+                'Rabbit': "Rabbit people are gentle, quiet, and elegant. You're compassionate and merciful with a strong aesthetic sense.",
+                'Dragon': "Dragon people are confident, intelligent, and enthusiastic. You're naturally lucky and gifted with power and charisma.",
+                'Snake': "Snake people are enigmatic, intuitive, and wise. You're deep thinker with strong analytical skills and appreciation for the finer things.",
+                'Horse': "Horse people are animated, active, and energetic. You're popular and cheerful with a love for freedom and independence.",
+                'Goat': "Goat people are calm, gentle, and sympathetic. You're creative and artistic with strong sense of beauty and harmony.",
+                'Monkey': "Monkey people are sharp, smart, and curious. You're inventive problem-solver with mischievous sense of humor.",
+                'Rooster': "Rooster people are observant, hardworking, and courageous. You're straightforward and honest with strong sense of timekeeping.",
+                'Dog': "Dog people are loyal, honest, and prudent. You've strong sense of justice and responsibility with deep care for others.",
+                'Pig': "Pig people are compassionate, generous, and diligent. You're peaceful soul with great concentration and appreciation for life's pleasures."
+            };
+            return meanings[animal] || "Unknown meaning";
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-section');
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
         // Simple cart functionality
         const addToCartButtons = document.querySelectorAll('.btn-outline');
         const cartCount = document.querySelector('.cart-count');
@@ -1167,23 +2139,26 @@
         
         addToCartButtons.forEach(button => {
             button.addEventListener('click', (e) => {
+                if (button.classList.contains('product-details') || button.classList.contains('read-more')) return;
+                
                 e.preventDefault();
                 count++;
                 cartCount.textContent = count;
                 
                 // Animation for feedback
+                const originalText = button.textContent;
                 button.textContent = "Added to Cart!";
                 button.style.background = "#4CAF50";
                 button.style.borderColor = "#4CAF50";
                 
                 setTimeout(() => {
-                    button.textContent = "Add to Cart";
+                    button.textContent = originalText;
                     button.style.background = "";
                     button.style.borderColor = "";
                 }, 1500);
             });
         });
-
+        
         // Newsletter form validation
         const newsletterForm = document.querySelector('.newsletter-form');
         newsletterForm.addEventListener('submit', (e) => {
